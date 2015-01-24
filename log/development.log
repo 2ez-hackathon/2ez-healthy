@@ -4,3 +4,45 @@ Started GET "/" for 127.0.0.1 at 2015-01-24 14:58:13 +0700
 Processing by Rails::WelcomeController#index as HTML
   Rendered /home/tuannnm/.rvm/gems/ruby-2.1.2/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
 Completed 200 OK in 114ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (89.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (152.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (49.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-24 16:13:00 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/manhtoan/.rvm/gems/ruby-2.1.5/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 23ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-24 16:14:20 +0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1456ms (Views: 1455.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/schedule.css?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/schedule.js?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-24 16:14:22 +0700
