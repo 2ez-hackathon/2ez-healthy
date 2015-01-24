@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'schedule/user_input'
+
+  match 'schedule/user_input',     :controller => :schedule,  :to => :user_input, :via => :get, :as => :user_input
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
