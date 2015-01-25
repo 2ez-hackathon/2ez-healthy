@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125025559) do
+ActiveRecord::Schema.define(version: 20150125030526) do
 
   create_table "hopitals", force: true do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150125025559) do
     t.text     "description_patient"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approve_doctor"
   end
 
 end

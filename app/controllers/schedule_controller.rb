@@ -11,20 +11,30 @@ class ScheduleController < ApplicationController
 
   def check_user_input
     @name = params[:name]
-    @age = params[:age]
-    @location_address = params[:location_address]
+    @phone = params[:phone]
+    @email = params[:email]
+    @age = params[:age]    
     @location_district = params[:location_district]
+    @location_address = "#{params[:location_address]} - #{@location_district}"
     @deparment = params[:deparment]
     @hopital_option = params[:hopital_option]
-    puts @hopital_name = params[:hopital_name]
     @time_1 = params[:time_1]
     @time_2 = params[:time_2]
     @description = params[:description]
-    if @name.present? && @hopital_option.present? && (@time_1.present? || @time_2.present?) && @deparment.present?
+    if @name.present? && @phone.present? && @email.present? && @hopital_option.present? && (@time_1.present? || @time_2.present?) && @deparment.present?
       if @time_1.present?
         @time = @time_1
       else
         @time = @time_2
+      end
+      if @hopital_option == 1
+        @hopital_name = params[:hopital_name]
+        @hopital_find = Hopital.find(params[:name])
+        @hopital_address = "#{@hopital_find.address} - #{@hopital_find.district}"
+      else
+        @hopital_find = Hopital.find_by(district: @location_district)
+        @hopital_name = @hopital_find.name
+        @hopital_address = "#{@hopital_find.address} - #{@hopital_find.district}"
       end
       render "check_user_input"
     else
