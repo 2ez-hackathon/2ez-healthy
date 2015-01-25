@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_patient: MyString
+  phone_patient: MyString
+  email_patient: MyString
+  department_patient: MyString
+  age_patient: 1
+  address_patient: MyString
+  hopital_patient: MyString
+  time_patient: 
+  description_patient: MyText
+
+two:
+  name_patient: MyString
+  phone_patient: MyString
+  email_patient: MyString
+  department_patient: MyString
+  age_patient: 1
+  address_patient: MyString
+  hopital_patient: MyString
+  time_patient: 
+  description_patient: MyText
