@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
 	<div class="left jumbotron">
-		<%= form_tag(user_input_path, :class => "form-inline", method: "get") do %>
+		<%= form_tag(check_user_input_path, :class => "form-inline", method: "get") do %>
 			<div class="row">
 				<div class="col-md-6">
 		  		<%= label_tag(:name, "Nhập tên: ") %>
@@ -93,7 +93,7 @@
 		  	</div>
 		  </div>
 
-		  <%= submit_tag("Request Appointment", :class => "btn btn-default") %>
+		  <%= submit_tag("Request Appointment", :class => "btn btn-default", data: { confirm: "Bạn đã chắc chắn là thông tin đã nhập chính xác." }) %>
 		<% end %>
 	</div>
 </div>

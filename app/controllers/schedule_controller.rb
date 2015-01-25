@@ -1,8 +1,12 @@
 #!/bin/env ruby
 # encoding: utf-8
 class ScheduleController < ApplicationController
-  def user_input
-
+  def user_input(redirect = false)
+    flash[:info] = "Chào mừng bạn đến với hệ thống đặt lịch khám"
+    if redirect
+      flash[:info] = "Chưa nhập đủ dữ liệu cần thiết"
+    end
+    render 'user_input'
   end
 
   def check_user_input
@@ -12,16 +16,19 @@ class ScheduleController < ApplicationController
     @location_district = params[:location_district]
     @deparment = params[:deparment]
     @hopital_option = params[:hopital_option]
-    @hopital_name = params[:hopital_name]
+    puts @hopital_name = params[:hopital_name]
     @time_1 = params[:time_1]
     @time_2 = params[:time_2]
     @description = params[:description]
-    if @name.present? && hopital_option.present? && (@time_1.present? || @time_2.present?) && @deparment.present?
-      puts "1"
+    if @name.present? && @hopital_option.present? && (@time_1.present? || @time_2.present?) && @deparment.present?
+      if @time_1.present?
+        @time = @time_1
+      else
+        @time = @time_2
+      end
       render "check_user_input"
     else
-      flash[:danger] = "Chưa nhập đủ dữ liệu cần thiết"  
-      render "user_input"
+      user_input(true)
     end
   end
 
