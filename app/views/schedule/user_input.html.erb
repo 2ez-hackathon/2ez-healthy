@@ -1,2 +1,117 @@
-<h1>Schedule#user_input</h1>
-<p>Find me in app/views/schedule/user_input.html.erb</p>
+<h1>THÔNG TIN CUỘC HẸN CỦA BẠN</h1>
+<strong>Nhập các thông tin để đặt lịch</strong>
+
+<div class="container-fluid">
+	<div class="left jumbotron">
+		<%= form_tag(check_user_input_path, :class => "form-inline", method: "get") do %>
+			<div class="row">
+				<div class="col-md-6">
+		  		<%= label_tag(:name, "Nhập tên: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= text_field_tag(:name) %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+				<div class="col-md-6">
+		  		<%= label_tag(:phone, "Nhập số điện thoại: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= text_field_tag(:phone) %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+				<div class="col-md-6">
+		  		<%= label_tag(:email, "Nhập email: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= email_field_tag :email, 'email@example.com' %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:age, "Nhập tuổi: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= number_field_tag :age, '1' %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:location_address, "Nhập địa chỉ nhà: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= text_field_tag(:location_address) %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:location_district, "Chọn quận: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= select_tag(:location_district, options_for_select([['Quan 1', 'Quan 1'], ['Quan 2', 'Quan 2'], ['Quan 3', 'Quan 3'], ['Quan 4', 'Quan 4'], ['Quan 5', 'Quan 5'], ['Quan 6', 'Quan 6'], ['Quan 7', 'Quan 7'], ['Quan 8', 'Quan 8'], ['Quan 9', 'Quan 9'], ['Quan 10', 'Quan 10'], ['Quan 11', 'Quan 11'], ['Quan 12', 'Quan 12']], :selected => params[:location_district])) %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:deparment, "Chuyên khoa *") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= select_tag(:deparment, options_for_select([['Giải phẫu bệnh', 'Giải phẫu bệnh'], ['Hóa sinh', 'Hóa sinh'], ['Huyết học', 'Huyết học'], ['Vi sinh', 'Vi sinh'], ['Ký sinh trùng', 'Ký sinh trùng'], ['Chẩn đoán hình ảnh', 'Chẩn đoán hình ảnh'], ['Nội tổng quát', 'Nội tổng quát'], ['Hồi sức cấp cứu', 'Hồi sức cấp cứu'], ['Nội tiết', 'Nội tiết'], ['Nội thần kinh', 'Nội thần kinh'], ['Lão khoa', 'Lão khoa'], ['Lao và bệnh phổi', 'Lao và bệnh phổi'], ['Nhi khoa', 'Nhi khoa'], ['Da liễu', 'Da liễu'], ['Nhiễm', 'Nhiễm'], ['Tâm thần', 'Tâm thần'], ['Bác sĩ gia đình', 'Bác sĩ gia đình'], ['Gây mê hồi sức', 'Gây mê hồi sức'], ['Ung thư', 'Ung thư'], ['Ngoại khoa - Ngoại tổng quát', 'Ngoại khoa - Ngoại tổng quát'], ['Ngoại khoa - Ngoại nhi'], ['Ngoại khoa - Ngoại nhi'], ['Ngoại khoa - Ngoại lồng ngực', 'Ngoại khoa -Ngoại lồng ngực'], ['Ngoại khoa - Ngoại niệu', 'Ngoại khoa - Ngoại niệu'], ['Ngoại khoa - Chấn thương chỉnh hình', 'Ngoại khoa - Chấn thương chỉnh hình'], ['Phục hồi chức năng', 'Phục hồi chức năng'], ['Sản phụ khoa', 'Sản phụ khoa'], ['Nhãn khoa', 'Nhãn khoa'], ['Tai Mũi Họng', 'Tai Mũi Họng'], ['Răng Hàm Mặt', 'Răng Hàm Mặt'], ['Y học Cổ truyền', 'Y học Cổ truyền'], ['Y tế Công cộng', 'Y tế Công cộng'], ['Công nghệ Dược phẩm và bào chế', 'Công nghệ Dược phẩm và bào chế'], ['Kiểm nghiệm thuốc – Độc chất', 'Kiểm nghiệm thuốc – Độc chất'], ['Dược liệu – Dược cổ truyền', 'Dược liệu – Dược cổ truyền'], ['Dược lý và dược lâm sàng', 'Dược lý và dược lâm sàng'], ['Tổ chức quản lý Dược', 'Tổ chức quản lý Dược']], :selected => params[:deparment])) %></br>
+		  	</div>
+		  </div>
+
+		  <%= label_tag(:hopital_intro, "Vui lòng chọn nơi khám theo 1 trong 3 lựa chọn sau") %></br>
+			<div class="row">
+				<div class="col-md-6">
+					<%= radio_button_tag :hopital_option, 1 %>
+		  		<%= label_tag(:hopital_name, "Chọn bệnh viện") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= collection_select(:hopital_name, :hopital_id, Hopital.all, :id, :name, prompt: true, :selected => 1) %></br>
+		  	</div>
+		  </div>
+		  <div class="row">
+		  	<div class="col-md-12">
+					<%= radio_button_tag :hopital_option, 2 %>
+					<%= label_tag(:hopital, "Đề nghị bệnh viện cho tôi") %></br></br>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+		  		<%= label_tag(:time_1, "Chọn lịch hẹn") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= datetime_local_field_tag(:time_1, value = nil, options = {:min => Time.new, :max => Time.new + 604800}) %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:time_2, "hoặc") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= datetime_local_field_tag(:time_2, value = nil, options = {:min => Time.new, :max => Time.new + 604800}) %></br>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:description, "Mô tả triệu chứng: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= text_area_tag :description, "Mô tả triệu chứng tại đây." %></br>
+		  	</div>
+		  </div>
+
+		  <%= submit_tag("Request Appointment", :class => "btn btn-default", data: { confirm: "Bạn đã chắc chắn là thông tin đã nhập chính xác." }) %>
+		<% end %>
+	</div>
+</div>
