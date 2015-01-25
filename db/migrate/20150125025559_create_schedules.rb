@@ -8,7 +8,7 @@ class CreateSchedules < ActiveRecord::Migration
       t.integer :age_patient
       t.string :address_patient
       t.string :hopital_patient
-      t.DateTime :time_patient
+      t.datetime :time_patient
       t.text :description_patient
 
       t.timestamps
