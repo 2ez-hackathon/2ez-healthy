@@ -1,0 +1,29 @@
+<div class="container-fluid">
+	<div class="left jumbotron">
+		<table class="table table-condensed">
+		  <th>
+			  <td>Tên</td>
+			  <td>Email</td>
+			  <td>Khoa</td>
+			  <td>Bệnh viện</td>
+			  <td>Thời gian</td>
+			  <td>#</td>
+			</th>
+			<% @appointments.each {|app| %>
+				<tr>
+					<td><%= app.id %></td>
+					<td><%= app.name_patient %></td>
+					<td><%= app.email_patient%></td>
+					<td><%= app.department_patient%></td>
+					<td><%= app.hopital_patient%></td>
+					<td><%= app.time_patient%></td>
+					<% if app.approve_doctor == true %>
+						<td>Approved</td>
+					<% else %>
+						<td><%= button_to "Approve" , approve_appointment_path(app.id), method: :get %></td>
+					<% end %>
+				</tr>
+			<% } %>
+		</table>
+	</div>
+</div>

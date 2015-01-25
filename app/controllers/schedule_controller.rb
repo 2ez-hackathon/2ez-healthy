@@ -36,16 +36,32 @@ class ScheduleController < ApplicationController
         @hopital_name = @hopital_find.name
         @hopital_address = "#{@hopital_find.address} - #{@hopital_find.district}"
       end
+      Schedule.create(name_patient: @name, phone_patient: @phone, email_patient: @email, 
+          department_patient: @deparment, age_patient: @age, address_patient: @location_address, 
+          hopital_patient: @hopital_name, time_patient: @time, description_patient: @description, approve_doctor: false)
       render "check_user_input"
     else
       user_input(true)
     end
   end
 
+  def manage_appointment
+    @appointments = Schedule.all
+    render "manage_appointment"
+  end
+
+  def approve_appointment
+    if params[:id].present?
+      appointment = Schedule.find(params[:id])
+      appointment.update(approve_doctor: true)
+    end
+    redirect_to manage_appointment_path
+  end
+
   def create_db_hopital
   	Hopital.create(name: "Benh Vien Nguyen Tri Phuong", address: "468 Nguyen Trai Phuong 8", district: "Quan 5")
   	Hopital.create(name: "Benh Vien Cap Cuu Trung Vuong", address: "266 Ly Thuong Kiet Phuong 14", district: "Quan 10")
-  	Hopital.create(name: "Benh Vien An Binh", address: "146 An Binh Phuong 7", district: "Quan 5")
+  	Hopital.create(name: "Benh Vien An Binh", address: "146 An Binh Phuo ng 7", district: "Quan 5")
   	Hopital.create(name: "Benh Vien Da Khoa Sai Gon", address: "125 Le Loi Phuong Ben Thanh", district: "Quan 1")
   	Hopital.create(name: "Benh Vien Quan 1 - Co So 1", address: "338 Hai Ba Trung P. Tan Dinh", district: "Quan 1")
   	Hopital.create(name: "Benh Vien Quan 1 - Co So 2", address: "29 A Cao Ba Nha", district: "Quan 1")
