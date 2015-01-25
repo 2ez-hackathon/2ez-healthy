@@ -11,6 +11,13 @@
 		<p class="text-muted">Khám tại khoa: <%= @deparment %></p>
 		<p class="text-muted">Bệnh viện: <%= @hopital_name %></p>
 		<p class="text-muted">Địa chỉ bệnh viện: <%= @hopital_address %></p>
+		<iframe
+  			width="600"
+  			height="450"
+  			frameborder="0" style="border:0"
+  			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBuS8kea32n887CPzyLUpL2ZkCWBoaMWxI
+    		&q=<%= @hopital_query %>">
+		</iframe>
 		<p class="text-muted">Thời gian dự kiến: <%= @time %></p>
 		<p class="text-muted">Triệu chứng ban đầu: <%= @description %></p>
 	</div>

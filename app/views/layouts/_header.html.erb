@@ -1,12 +1,21 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "sample app", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
+<div id="home" class="header">
+  <div class="top-header">
+    <div class="container">
+      <div class="logo">
+        <%= link_to "Healthy App", 'http://rubyonrails.org/' %>
+      </div>
+      <!-- start-top-nav -->
+      <nav class="top-nav">
+        <ul class="top-nav">
+          <li class="active"><%= link_to "Home", '#home', class:"scroll" %></li>
+          <li><%= link_to "About", '#about', class:"scroll" %></li>
+          <li><%= link_to "Services", '#services', class:"scroll" %></li>
+          <li><%= link_to "Team", '#team', class:"scroll" %></li>
+          <li><%= link_to "Contact", '#contact', class:"scroll" %></li>
+        </ul>
+        <%= link_to image_tag("menu-icon.png", alt: "Menu Icon"), 'http://rubyonrails.org/', id:"pull" %>
+      </nav>
+      <div class="clearfix"></div>
+    </div>
   </div>
-</header>
+</div>

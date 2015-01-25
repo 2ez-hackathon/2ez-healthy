@@ -5,7 +5,7 @@ development:
   database: healthy
   pool: 5
   username: root
-  password: 147596379852
+  password: Nmt#kms54
   host: localhost
 
 test:
@@ -15,7 +15,7 @@ test:
   database: healthy
   pool: 5
   username: root
-  password: 147596379852
+  password: Nmt#kms54
   host: localhost
 
 production:
@@ -25,5 +25,5 @@ production:
   database: healthy
   pool: 5
   username: root
-  password: 147596379852
+  password: Nmt#kms54
   host: localhost

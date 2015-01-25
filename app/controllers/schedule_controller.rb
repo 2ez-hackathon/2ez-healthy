@@ -39,6 +39,12 @@ class ScheduleController < ApplicationController
       Schedule.create(name_patient: @name, phone_patient: @phone, email_patient: @email, 
           department_patient: @deparment, age_patient: @age, address_patient: @location_address, 
           hopital_patient: @hopital_name, time_patient: @time, description_patient: @description, approve_doctor: false)
+      @hopital_query = @hopital_name
+      values = @hopital_query.split(" ")
+      @hopital_query = ""
+      values.each do |value|
+        @hopital_query = "#{@hopital_query}+#{value}"
+      end
       render "check_user_input"
     else
       user_input(true)
