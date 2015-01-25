@@ -1,38 +1,99 @@
 <h1>THÔNG TIN CUỘC HẸN CỦA BẠN</h1>
-<p>Nhập các thông tin để đặt lịch</p>
+<strong>Nhập các thông tin để đặt lịch</strong>
 
-<%= form_tag(user_input_path, method: "get") do %>
-  <%= label_tag(:name, "Nhập tên: ") %>
-  <%= text_field_tag(:name) %>
+<div class="container-fluid">
+	<div class="left jumbotron">
+		<%= form_tag(user_input_path, :class => "form-inline", method: "get") do %>
+			<div class="row">
+				<div class="col-md-6">
+		  		<%= label_tag(:name, "Nhập tên: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= text_field_tag(:name) %></br>
+		  	</div>
+		  </div>
 
-  <%= label_tag(:age, "Nhập tuổi: ") %>
-  <%= number_field_tag :age, '1' %>
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:age, "Nhập tuổi: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= number_field_tag :age, '1' %></br>
+		  	</div>
+		  </div>
 
-  <%= label_tag(:location_address, "Nhập địa chỉ nhà: ") %>
-  <%= text_field_tag(:location_address) %>
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:location_address, "Nhập địa chỉ nhà: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= text_field_tag(:location_address) %></br>
+		  	</div>
+		  </div>
 
-  <%= label_tag(:location_district, "Chọn quận: ") %>
-  <%= select_tag(:location_district, options_for_select([['Quan 1', 1], ['Quan 2', 2], ['Quan 3', 3], ['Quan 4', 4], ['Quan 5', 5], ['Quan 6', 6], ['Quan 7', 7], ['Quan 8', 8], ['Quan 9', 9], ['Quan 10', 10], ['Quan 11', 11], ['Quan 12', 12]], :selected => params[:location_district])) %>
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:location_district, "Chọn quận: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= select_tag(:location_district, options_for_select([['Quan 1', 1], ['Quan 2', 2], ['Quan 3', 3], ['Quan 4', 4], ['Quan 5', 5], ['Quan 6', 6], ['Quan 7', 7], ['Quan 8', 8], ['Quan 9', 9], ['Quan 10', 10], ['Quan 11', 11], ['Quan 12', 12]], :selected => params[:location_district])) %></br>
+		  	</div>
+		  </div>
 
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:deparment, "Chuyên khoa *") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= select_tag(:deparment, options_for_select([['Giải phẫu bệnh', 1], ['Hóa sinh', 2], ['Huyết học', 3], ['Vi sinh', 4], ['Ký sinh trùng', 5], ['Chẩn đoán hình ảnh', 6], ['Nội tổng quát', 6], ['Hồi sức cấp cứu', 6], ['Nội tiết', 6], ['Nội thần kinh', 6], ['Lão khoa', 6], ['Lao và bệnh phổi', 6], ['Nhi khoa', 6], ['Da liễu', 6], ['Nhiễm', 6], ['Tâm thần', 6], ['Bác sĩ gia đình', 6], ['Gây mê hồi sức', 6], ['Ung thư', 6], ['Ngoại khoa (Ngoại tổng quát)', 6], ['Ngoại khoa (Ngoại nhi)', 6], ['Ngoại khoa (Ngoại lồng ngực)', 6], ['Ngoại khoa (Ngoại niệu)', 6], ['Ngoại khoa (Chấn thương chỉnh hình)', 6], ['Phục hồi chức năng', 6], ['Sản phụ khoa', 6], ['Nhãn khoa', 6], ['Tai Mũi Họng', 6], ['Răng Hàm Mặt', 7], ['Y học Cổ truyền', 7], ['Y tế Công cộng', 7], ['Công nghệ Dược phẩm và bào chế', 7], ['Kiểm nghiệm thuốc – Độc chất', 7], ['Dược liệu – Dược cổ truyền', 7], ['Dược lý và dược lâm sàng', 7], ['Tổ chức quản lý Dược', 7]], :selected => params[:deparment])) %></br>
+		  	</div>
+		  </div>
 
-  <%= label_tag(:deparment, "Chuyên khoa *") %>
-  <%= select_tag(:deparment, options_for_select([['Giải phẫu bệnh', 1], ['Hóa sinh', 2], ['Huyết học', 3], ['Vi sinh', 4], ['Ký sinh trùng', 5], ['Chẩn đoán hình ảnh', 6], ['Nội tổng quát', 6], ['Hồi sức cấp cứu', 6], ['Nội tiết', 6], ['Nội thần kinh', 6], ['Lão khoa', 6], ['Lao và bệnh phổi', 6], ['Nhi khoa', 6], ['Da liễu', 6], ['Nhiễm', 6], ['Tâm thần', 6], ['Bác sĩ gia đình', 6], ['Gây mê hồi sức', 6], ['Ung thư', 6], ['Ngoại khoa (Ngoại tổng quát)', 6], ['Ngoại khoa (Ngoại nhi)', 6], ['Ngoại khoa (Ngoại lồng ngực)', 6], ['Ngoại khoa (Ngoại niệu)', 6], ['Ngoại khoa (Chấn thương chỉnh hình)', 6], ['Phục hồi chức năng', 6], ['Sản phụ khoa', 6], ['Nhãn khoa', 6], ['Tai Mũi Họng', 6], ['Răng Hàm Mặt', 7], ['Y học Cổ truyền', 7], ['Y tế Công cộng', 7], ['Công nghệ Dược phẩm và bào chế', 7], ['Kiểm nghiệm thuốc – Độc chất', 7], ['Dược liệu – Dược cổ truyền', 7], ['Dược lý và dược lâm sàng', 7], ['Tổ chức quản lý Dược', 7]], :selected => params[:deparment])) %>
+		  <%= label_tag(:hopital_intro, "Vui lòng chọn nơi khám theo 1 trong 3 lựa chọn sau") %></br>
+			<div class="row">
+				<div class="col-md-6">
+					<%= radio_button_tag :hopital_option, 1 %>
+		  		<%= label_tag(:hopital_name, "Chọn bệnh viện") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= collection_select(:hopital_name, :hopital_id, Hopital.all, :id, :name, prompt: true, :selected => 1) %></br>
+		  	</div>
+		  </div>
+		  <div class="row">
+		  	<div class="col-md-12">
+					<%= radio_button_tag :hopital_option, 2 %>
+					<%= label_tag(:hopital, "Đề nghị bệnh viện cho tôi") %></br></br>
+				</div>
+			</div>
 
-  <%= label_tag(:hopital_intro, "Vui lòng chọn nơi khám theo 1 trong 3 lựa chọn sau") %>
-	<%= radio_button_tag :hopital_option, 1 %>
-  <%= label_tag(:hopital_name, "Chọn bệnh viện") %>
-  <%= collection_select(:hopital_name, :hopital_id, Hopital.all, :id, :name, prompt: true, :selected => 1) %>
-	<%= radio_button_tag :hopital_option, 2 %>
-	<%= label_tag(:hopital, "Đề nghị bệnh viện cho tôi") %>
+			<div class="row">
+				<div class="col-md-6">
+		  		<%= label_tag(:time_1, "Chọn lịch hẹn") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= datetime_local_field_tag(:time_1, value = nil, options = {:min => Time.new, :max => Time.new + 604800}) %></br>
+		  	</div>
+		  </div>
 
-  <%= label_tag(:time_1, "Chọn lịch hẹn") %>
-  <%= datetime_local_field_tag(:time_1, value = nil, options = {:min => Time.new, :max => Time.new + 604800}) %>
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:time_2, "hoặc") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= datetime_local_field_tag(:time_2, value = nil, options = {:min => Time.new, :max => Time.new + 604800}) %></br>
+		  	</div>
+		  </div>
 
-  <%= label_tag(:time_2, "hoặc") %>
-  <%= datetime_local_field_tag(:time_2, value = nil, options = {:min => Time.new, :max => Time.new + 604800}) %>
+		  <div class="row">
+		  	<div class="col-md-6">
+		  		<%= label_tag(:description, "Mô tả triệu chứng: ") %>
+		  	</div>
+		  	<div class="col-md-6">
+		  		<%= text_area_tag :description, "Mô tả triệu chứng tại đây." %></br>
+		  	</div>
+		  </div>
 
-  <%= label_tag(:description, "Mô tả triệu chứng: ") %>
-  <%= text_area_tag :description, "Mô tả triệu chứng tại đây." %>
-
-  <%= submit_tag("Request Appointment") %>
-<% end %>
+		  <%= submit_tag("Request Appointment", :class => "btn btn-default") %>
+		<% end %>
+	</div>
+</div>
