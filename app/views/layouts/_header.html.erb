@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<!-- <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "sample app", '#', id: "logo" %>
     <nav>
@@ -9,4 +9,26 @@
       </ul>
     </nav>
   </div>
-</header>
+</header> -->
+
+<div id="home" class="header">
+  <div class="top-header">
+    <div class="container">
+      <div class="logo">
+        <%= link_to image_tag("logo.png", alt: "Web logo"), 'http://rubyonrails.org/' %>
+      </div>
+      <!-- start-top-nav -->
+      <nav class="top-nav">
+        <ul class="top-nav">
+          <li class="active"><%= link_to "Home", '#', class:"scroll" %></li>
+          <li><%= link_to "About", '#', class:"scroll" %></li>
+          <li><%= link_to "Services", '#', class:"scroll" %></li>
+          <li><%= link_to "Team", '#', class:"scroll" %></li>
+          <li><%= link_to "Contact", '#', class:"scroll" %></li>
+        </ul>
+        <%= link_to image_tag("menu-icon.png", alt: "Menu Icon"), 'http://rubyonrails.org/', id:"pull" %>
+      </nav>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
