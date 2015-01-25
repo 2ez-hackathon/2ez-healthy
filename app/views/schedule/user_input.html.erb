@@ -19,12 +19,11 @@
   <%= select_tag(:deparment, options_for_select([['Giải phẫu bệnh', 1], ['Hóa sinh', 2], ['Huyết học', 3], ['Vi sinh', 4], ['Ký sinh trùng', 5], ['Chẩn đoán hình ảnh', 6], ['Nội tổng quát', 6], ['Hồi sức cấp cứu', 6], ['Nội tiết', 6], ['Nội thần kinh', 6], ['Lão khoa', 6], ['Lao và bệnh phổi', 6], ['Nhi khoa', 6], ['Da liễu', 6], ['Nhiễm', 6], ['Tâm thần', 6], ['Bác sĩ gia đình', 6], ['Gây mê hồi sức', 6], ['Ung thư', 6], ['Ngoại khoa (Ngoại tổng quát)', 6], ['Ngoại khoa (Ngoại nhi)', 6], ['Ngoại khoa (Ngoại lồng ngực)', 6], ['Ngoại khoa (Ngoại niệu)', 6], ['Ngoại khoa (Chấn thương chỉnh hình)', 6], ['Phục hồi chức năng', 6], ['Sản phụ khoa', 6], ['Nhãn khoa', 6], ['Tai Mũi Họng', 6], ['Răng Hàm Mặt', 7], ['Y học Cổ truyền', 7], ['Y tế Công cộng', 7], ['Công nghệ Dược phẩm và bào chế', 7], ['Kiểm nghiệm thuốc – Độc chất', 7], ['Dược liệu – Dược cổ truyền', 7], ['Dược lý và dược lâm sàng', 7], ['Tổ chức quản lý Dược', 7]], :selected => params[:deparment])) %>
 
   <%= label_tag(:hopital_intro, "Vui lòng chọn nơi khám theo 1 trong 3 lựa chọn sau") %>
-	<%= radio_button_tag :hopital, 1 %>
-  <%= label_tag(:hopital, "Chọn bệnh viện") %>
-	<%= radio_button_tag :hopital, 2 %>
+	<%= radio_button_tag :hopital_option, 1 %>
+  <%= label_tag(:hopital_name, "Chọn bệnh viện") %>
+  <%= collection_select(:hopital_name, :hopital_id, Hopital.all, :id, :name, prompt: true, :selected => 1) %>
+	<%= radio_button_tag :hopital_option, 2 %>
 	<%= label_tag(:hopital, "Đề nghị bệnh viện cho tôi") %>
-
-  <%= date_field_tag 'date', '01/01/2014' %>
 
   <%= label_tag(:time_1, "Chọn lịch hẹn") %>
   <%= datetime_local_field_tag(:time_1, value = nil, options = {:min => Time.new, :max => Time.new + 604800}) %>
@@ -35,5 +34,5 @@
   <%= label_tag(:description, "Mô tả triệu chứng: ") %>
   <%= text_area_tag :description, "Mô tả triệu chứng tại đây." %>
 
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Request Appointment") %>
 <% end %>
